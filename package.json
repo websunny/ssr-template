@@ -1,0 +1,12 @@
+{
+  "name": "ssr-template",
+  "version": "0.0.1",
+  "description": "react ssr templatreacr ssr",
+  "main": "index.js",
+  "keywords": [
+    "react",
+    "server"
+  ],
+  "author": "webSunny",
+  "license": "ISC"
+}

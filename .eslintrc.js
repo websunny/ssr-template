@@ -1,24 +1,22 @@
 module.exports =  {
-  parser:  '@typescript-eslint/parser',  // Specifies the ESLint parser
+  parser:  '@typescript-eslint/parser',  
   extends:  [
-    'plugin:react/recommended',  // Uses the recommended rules from @eslint-plugin-react
-    'plugin:@typescript-eslint/recommended',  // Uses the recommended rules from @typescript-eslint/eslint-plugin
+    'plugin:react/recommended',  
+    'plugin:@typescript-eslint/recommended',  
   ],
   parserOptions:  {
-    'ecmaVersion':  2018,  // Allows for the parsing of modern ECMAScript features
-    'sourceType':  'module',  // Allows for the use of imports
+    'ecmaVersion':  2018,  // 允许使用的ECMAScipt的版本
+    'sourceType':  'module',  // 允许使用import
     'ecmaFeatures':  {
-    'jsx':  true,  // Allows for the parsing of JSX
+    'jsx':  true,  // 允许使用jsx
     },
   },
   plugins: [
     'react',
-    'jsx-a11y', // 交互相关
+    'jsx-a11y', 
     'import'
   ],
   rules:  {
-    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-    // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     'semi': ['error', 'never'], // 禁止使用末尾分号
     'comma-dangle': [0], // 尾随逗号
     'arrow-parens': ['error', 'as-needed'], // 箭头函数只在一个参数时省略小括号
@@ -40,6 +38,7 @@ module.exports =  {
     'no-use-before-define': [0], // 允许使用在定义之前使用fuction，因为export时可以调用
     'operator-linebreak': [0], // 不使用统一的换行方式，因为jsx里
     'radix': [0], // 允许parseInt不传第二个参数
+
     // react相关规则
     'react/jsx-filename-extension': [0, {
       "extensions": [".js"]
@@ -65,7 +64,7 @@ module.exports =  {
   },
   settings:  {
     'react':  {
-      'version':  'detect',  // Tells eslint-plugin-react to automatically detect the version of React to use
+      'version':  'detect',  
     },
   },
 };

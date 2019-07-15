@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "description": "react ssr templatreacr ssr",
   "main": "index.js",
+  "script": {
+    "clean": "rimraf build && rimraf assets-cache",
+    "prebuild": "npm run clean",
+    "build": "babel src -d build --copy-files --ignore *.html",
+    "babel": "babel"
+  },
   "keywords": [
     "react",
     "server"
@@ -10,15 +16,21 @@
   "author": "webSunny",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
     "@typescript-eslint/eslint-plugin": "^1.12.0",
     "@typescript-eslint/parser": "^1.12.0",
+    "babel-loader": "^8.0.6",
     "eslint": "^6.0.1",
-    "typescript": "^3.5.3",
-    "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.6",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
-    "eslint-plugin-react": "7.11.1"
+    "eslint-plugin-react": "7.11.1",
+    "html-webpack-plugin": "^3.2.0",
+    "rimraf": "^2.6.3",
+    "typescript": "^3.5.3",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6"
   },
   "dependencies": {
     "react": "^16.8.6",

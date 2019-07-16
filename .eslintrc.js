@@ -61,6 +61,25 @@ module.exports =  {
  
     // import相关规则
     'import/no-dynamic-require': [0], // 允许使用require变量
+
+    //ts相关规则
+    '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
+    '@typescript-eslint/explicit-function-return-type': [
+      // 'warn',
+      'off', 
+      {
+        allowExpressions: true, 
+        allowTypedFunctionExpressions: true,
+      }
+    ],
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/camelcase': ['off', {properties: 'always'}],
+    '@typescript-eslint/no-unused-vars': ['error', {
+      'vars': 'all',
+      'args': 'none',
+      'ignoreRestSiblings': true,
+    }]
   },
   settings:  {
     'react':  {

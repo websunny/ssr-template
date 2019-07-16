@@ -3,6 +3,7 @@ const path = require('path')
 const paths = require('./paths')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
+
 let webpack_config ={
   entry:{
     app: [paths.appIndexJs]
@@ -18,11 +19,12 @@ let webpack_config ={
         use: 'babel-loader'
       },
       {
-        test: webpackIsomorphicToolsPlugin.regularExpression('css'),
-        use: [
-          IS_LOCAL_DEV ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
+        test: webpack_isomorphic_tools_plugin.regularExpression('css'),,
+        use: ['style-loader','css-loader']
+      },
+      {
+        test: webpack_isomorphic_tools_plugin.regularExpression('less'),,
+        use: ['style-loader','css-loader','less-loader']
       },
     ]
   },

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import site from './site'
+import admin from './admin'
 
 export default combineReducers({
-    site,
+    admin,
 })

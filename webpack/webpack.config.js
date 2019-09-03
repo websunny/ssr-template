@@ -19,11 +19,11 @@ let webpack_config ={
         use: 'babel-loader'
       },
       {
-        test: webpack_isomorphic_tools_plugin.regularExpression('css'),,
+        test: webpack_isomorphic_tools_plugin.regularExpression('css'),
         use: ['style-loader','css-loader']
       },
       {
-        test: webpack_isomorphic_tools_plugin.regularExpression('less'),,
+        test: webpack_isomorphic_tools_plugin.regularExpression('less'),
         use: ['style-loader','css-loader','less-loader']
       },
     ]

@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import routes from '../../../controllers'
+import './style.less'
 
-@withRouter
-export default class App extends Component {
 
-    routeWithSubRoutes = (route, index) => (
+export default class App extends Component{
+    public state ={
+
+    }
+    public routeWithSubRoutes = (route:any, index:number) => (
         <Route
             key={index}
             exact={route.exact || false}
@@ -19,11 +22,11 @@ export default class App extends Component {
         />
     )
 
-    render() {
+    public render() {
         return (
             <div className="container">
                 <Switch>
-                    {routes.map((route, index) =>
+                    {routes.map((route:any, index:number) =>
                         this.routeWithSubRoutes(route, index)
                     )}
                 </Switch>

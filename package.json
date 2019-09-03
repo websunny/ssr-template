@@ -3,11 +3,15 @@
   "version": "0.0.1",
   "description": "react ssr templatreacr ssr",
   "main": "index.js",
-  "script": {
+  "scripts": {
     "clean": "rimraf build && rimraf assets-cache",
     "prebuild": "npm run clean",
-    "build": "babel src -d build --copy-files --ignore *.html",
-    "babel": "babel"
+    "build": "babel src -d build --extensions '.ts,.tsx' --copy-files --ignore *.html",
+    "babel": "babel",
+    "build:dev": "npm run build && webpack -p --config webpack/webpack.config.js",
+    "start:dev": "nodemon build/server/index.js",
+    "devServer": "ts-node  ./src/index.ts",
+    "devServer:watch": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/index.ts"
   },
   "keywords": [
     "react",
@@ -17,8 +21,12 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
     "@types/koa": "^2.0.49",
     "@types/koa-bodyparser": "^4.3.0",
     "@types/koa-router": "^7.0.42",
@@ -37,16 +45,22 @@
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.11.1",
     "html-webpack-plugin": "^3.2.0",
+    "less": "^3.10.3",
     "less-loader": "^5.0.0",
-    "rimraf": "^2.6.3",
+    "rimraf": "^2.7.1",
     "style-loader": "^0.23.1",
     "typescript": "^3.5.3",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
+    "art-template": "^4.13.2",
     "koa": "^2.8.1",
+    "koa-art-template": "^1.1.1",
     "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-loadable": "^5.5.0",

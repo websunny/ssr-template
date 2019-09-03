@@ -1,15 +1,13 @@
-const webpack = require ('webpack')
 const path = require('path')
-const paths = require('./paths')
+const paths = require('./path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
 
 let webpack_config ={
   entry:{
     app: [paths.appIndexJs]
   },
   output: {
-    
+    path: paths.viewHtml
   },
   module: {
     rules: [
@@ -19,11 +17,11 @@ let webpack_config ={
         use: 'babel-loader'
       },
       {
-        test: webpack_isomorphic_tools_plugin.regularExpression('css'),
+        test: /\.css$/,
         use: ['style-loader','css-loader']
       },
       {
-        test: webpack_isomorphic_tools_plugin.regularExpression('less'),
+        test: /\.less$/,
         use: ['style-loader','css-loader','less-loader']
       },
     ]

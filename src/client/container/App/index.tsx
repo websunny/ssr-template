@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import * as React from 'react'
+import { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import routes from '../../../controllers'
 import './style.less'

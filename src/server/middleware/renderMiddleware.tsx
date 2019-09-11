@@ -2,7 +2,7 @@ import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
 import { matchRoutes } from 'react-router-config'
 import { Provider } from 'react-redux'
-import React from 'react'
+import * as React from 'react'
 
 interface Option {
     App: any;
@@ -45,15 +45,15 @@ const renderMiddleware = ({ App, getStore, routes, fetchList }: Option) => async
             const routerContext = {}
 
             /** 请求公用接口 */
-            const promiseList = fetchList.map(item => ({
-                ...item,
-                params: {
-                    ...item.params,
-                }
-            }))
-
-            await Promise.all(promiseList.map((item: any) => store.dispatch(item.action(item.params))))
-
+            if(fetchList.length){
+                const promiseList = fetchList.map((item:any) => ({
+                    ...item,
+                    params: {
+                        ...item.params,
+                    }
+                }))
+                await Promise.all(promiseList.map((item: any) => store.dispatch(item.action(item.params))))
+            }
             /** 请求页面接口 */
             await loadBranchData(store, ctx.req.url, branch)
 

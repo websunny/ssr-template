@@ -20,6 +20,7 @@
   "author": "webSunny",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.6.0",
     "@babel/core": "^7.5.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
@@ -31,6 +32,7 @@
     "@types/koa-bodyparser": "^4.3.0",
     "@types/koa-router": "^7.0.42",
     "@types/koa2-cors": "^2.0.1",
+    "@types/loadable__component": "^5.10.0",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/react-loadable": "^5.5.1",
@@ -56,6 +58,7 @@
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
+    "@loadable/component": "^5.10.2",
     "art-template": "^4.13.2",
     "koa": "^2.8.1",
     "koa-art-template": "^1.1.1",

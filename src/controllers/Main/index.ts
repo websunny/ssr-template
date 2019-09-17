@@ -1,12 +1,9 @@
 import config from './config'
 import util from '../util'
-import * as Loadable from 'react-loadable'
+import Loadable from '@loadable/component'
 
 let routes:any = util.getRoutes(config)
-let MainPage = Loadable({
-    loader: () => import('./../../client/container/Main/index'),
-    loading: ():null => null,
-})
+let MainPage = Loadable(() => import('./../../client/container/Main/index'))
 let loadData = (dispatch: any, params: any) => {
     return Promise.all([])
 }

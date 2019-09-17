@@ -2,7 +2,7 @@ import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
 import { matchRoutes } from 'react-router-config'
 import { Provider } from 'react-redux'
-import * as React from 'react'
+import React from 'react'
 
 interface Option {
     App: any;

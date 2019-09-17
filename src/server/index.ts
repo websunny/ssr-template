@@ -1,7 +1,7 @@
-import * as koa from 'koa'
-import * as Bodyparser from 'koa-bodyparser'
-import * as cors from 'koa2-cors'
-import * as KoaRouter from 'koa-router'
+import koa from 'koa'
+import Bodyparser from 'koa-bodyparser'
+import cors from 'koa2-cors'
+import KoaRouter from 'koa-router'
 const render =require('koa-art-template')
 const serve =require('koa-static')
 import renderMiddleware from './middleware/renderMiddleware'

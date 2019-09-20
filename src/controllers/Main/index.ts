@@ -1,5 +1,5 @@
 import config from './config'
-import util from '../util'
+import util from '../utils'
 import Loadable from '@loadable/component'
 
 let routes:any = util.getRoutes(config)

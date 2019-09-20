@@ -28,6 +28,9 @@ const getRoutes = (params:IParams) => {
     return _routes
 }
 
+
+
+
 export default {
     getRoutes
 }

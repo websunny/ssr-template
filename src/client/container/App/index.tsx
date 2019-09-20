@@ -1,11 +1,9 @@
 import  React from 'react'
-import { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import routes from '../../../controllers'
 import './style.less'
 
-
-export default class App extends Component{
+class App extends React.Component{
     public state ={
 
     }
@@ -35,3 +33,5 @@ export default class App extends Component{
         )
     }
 }
+
+export default App

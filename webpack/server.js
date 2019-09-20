@@ -20,6 +20,7 @@ const myserver= () => {
       colors: true
     },
     host: '0.0.0.0',
+    quiet:true,
     port: PORT,
     headers: { 'Access-Control-Allow-Origin': '*' },
     historyApiFallback: true,

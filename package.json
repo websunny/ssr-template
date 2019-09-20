@@ -10,7 +10,7 @@
     "babel": "babel",
     "build:dev": "npm run build && webpack -p --config webpack/webpack.config.js",
     "start:dev": "nodemon build/server/index.js",
-    "clientServer": "cross-env CLIENT_HOT=true node webpack/server.js",
+    "clientServer": "cross-env NODE_ENV=development CLIENT_HOT=true node webpack/server.js",
     "devServer": "ts-node  ./src/server/index.ts",
     "devServer:watch": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server/index.ts"
   },
@@ -24,6 +24,7 @@
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.5.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.4",
@@ -42,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^1.12.0",
     "@typescript-eslint/parser": "^1.12.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-webpack-alias": "^2.1.2",
     "cross-env": "^5.2.1",
     "css-loader": "^3.0.0",
     "eslint": "^6.0.1",
@@ -52,10 +54,12 @@
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "nodemon": "^1.19.2",
+    "progress-bar-webpack-plugin": "^1.12.1",
     "rimraf": "^2.7.1",
     "style-loader": "^0.23.1",
+    "ts-loader": "^6.1.0",
     "typescript": "^3.5.3",
-    "webpack": "^4.35.3",
+    "webpack": "^4.40.2",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.8.1"
   },
@@ -70,11 +74,13 @@
     "koa2-cors": "^2.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.12.13",
     "react-redux": "^7.1.0",
     "react-router-config": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "ts-node": "^8.3.0"
+    "ts-node": "^8.3.0",
+    "webpack-cli": "^3.3.9"
   }
 }

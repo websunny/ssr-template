@@ -11,8 +11,9 @@
     "build:dev": "npm run build && webpack -p --config webpack/webpack.config.js",
     "start:dev": "nodemon build/server/index.js",
     "clientServer": "cross-env NODE_ENV=development CLIENT_HOT=true node webpack/server.js",
-    "devServer": "ts-node  ./src/server/index.ts",
-    "devServer:watch": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server/index.ts"
+    "buildServer": "cross-env NODE_ENV=development webpack --config webpack/webpack.config.js",
+    "devServer": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server/index.ts",
+    "devServer:w": "npm run buildServer -- -w --watch-aggregate-timeout 2000"
   },
   "keywords": [
     "react",
